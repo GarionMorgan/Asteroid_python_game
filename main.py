@@ -21,6 +21,9 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+            
+        #updates the player
+        player.update(dt)
         #background color
         screen.fill((0,0,0))
         #draw the player
