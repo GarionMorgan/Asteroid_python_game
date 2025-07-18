@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 def main():
     print("Starting Asteroids!")
@@ -9,6 +10,8 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     #pygame time clock to help keep track of time
     clock = pygame.time.Clock()
+    #initialize player
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT /2)
     dt = 0
 
     game_loop = True
@@ -20,6 +23,8 @@ def main():
                 return
         #background color
         screen.fill((0,0,0))
+        #draw the player
+        player.draw(screen)
         #updates the screen
         pygame.display.flip()
         #updates every 60 seconds
