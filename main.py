@@ -7,6 +7,9 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
     #creating screen
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    #pygame time clock to help keep track of time
+    clock = pygame.time.Clock()
+    dt = 0
 
     game_loop = True
 
@@ -19,6 +22,8 @@ def main():
         screen.fill((0,0,0))
         #updates the screen
         pygame.display.flip()
+        #updates every 60 seconds
+        dt = clock.tick(60) / 1000
 
 
 
